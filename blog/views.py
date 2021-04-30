@@ -6,6 +6,7 @@ from .models import Post
 
 
 
+
 # Create your views here.
 class BlogListView(ListView):
     model = Post
@@ -14,6 +15,7 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Post
     template_name ='post_detail.html'
+
 
 class BlogCreateView(CreateView):
     model = Post
