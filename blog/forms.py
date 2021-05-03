@@ -1,6 +1,8 @@
 from django import forms
+from .models import Comment
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+
 
 # Sign Up Form
 class SignUpForm(UserCreationForm):
@@ -19,4 +21,12 @@ class SignUpForm(UserCreationForm):
             'password2', 
             ]
 
+class CommentForm(forms.ModelForm):
 
+    class Meta:
+        model = Comment
+        fields = ['body']
+
+        widget = {
+            'body': forms.Textarea(attrs={'class':'form-control'})
+        }
